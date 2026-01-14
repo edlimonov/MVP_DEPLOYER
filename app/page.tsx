@@ -61,5 +61,3 @@ const styles: Record<string, React.CSSProperties> = {
   featureText: { marginTop: 8, color: '#9aa0a6', fontSize: 13 },
   footer: { marginTop: 36, color: '#6b6f76', fontSize: 13 }
 }
-  );
-}
