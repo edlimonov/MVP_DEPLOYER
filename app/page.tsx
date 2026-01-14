@@ -9,17 +9,51 @@ export default function Home() {
         <h1 style={styles.title}>Arbora</h1>
         <p style={styles.subtitle}>Платформа арбитража криптовалют — обнаруживайте и эксплуатируйте ценовые расхождения в реальном времени.</p>
 
-        <div style={styles.card}>
-          <label style={styles.label}>Подключите источник (пример)</label>
-          <input style={styles.input} placeholder="https://github.com/owner/repo (пример)" disabled />
-
-          <div style={{ display: 'flex', gap: 12, marginTop: 16 }}>
-            <button style={{ ...styles.button, flex: 1 }} disabled>Запустить сканирование</button>
-            <button style={{ ...styles.ghost, width: 160 }} disabled>Остановить</button>
+        <div style={styles.card} className="card">
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+            <div style={{ fontSize: 16, color: '#c7cacf' }}>Попробуйте арбитраж прямо сейчас</div>
+            <button className="cta">Попробовать бесплатно</button>
+            <div style={styles.example}>Поддерживается: Binance, Coinbase, Kraken, Uniswap</div>
           </div>
-
-          <div style={styles.example}>Поддерживается: Binance, Coinbase, Kraken, Uniswap</div>
         </div>
+
+      <style>{`
+        .cta {
+          background: #fff;
+          color: #000;
+          padding: 12px 20px;
+          border-radius: 12px;
+          font-weight: 700;
+          border: none;
+          cursor: pointer;
+          box-shadow: 0 8px 30px rgba(16,24,40,0.25);
+          transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease;
+        }
+
+        .cta:hover {
+          transform: translateY(-6px) scale(1.02);
+          box-shadow: 0 18px 40px rgba(16,24,40,0.35);
+        }
+
+        .card {
+          animation: fadeUp 600ms ease both;
+        }
+
+        .feature {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-6px); }
+          100% { transform: translateY(0); }
+        }
+      `}</style>
 
         <section style={styles.features}>
           <div style={styles.feature}>
